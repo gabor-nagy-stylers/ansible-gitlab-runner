@@ -21,6 +21,7 @@
     - gitlab_runner.state|default('present') == 'present'
   loop: "{{ gitlab_runner_runners }}"
   loop_control:
+    label: "{{ gitlab_runner.name }}"
     index_var: gitlab_runner_index
     loop_var: gitlab_runner
 
@@ -33,5 +34,6 @@
     - gitlab_runner.state|default('present') == 'absent'
   loop: "{{ gitlab_runner_runners }}"
   loop_control:
+    label: "{{ gitlab_runner.name }}"
     index_var: gitlab_runner_index
     loop_var: gitlab_runner

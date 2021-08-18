@@ -20,6 +20,7 @@
   include_tasks: config-runner-container.yml
   loop: "{{ runner_configs }}"
   loop_control:
+    label: "{{ runner_config.name }}"
     index_var: runner_config_index
     loop_var: runner_config
 
