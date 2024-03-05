@@ -26,6 +26,7 @@
   include_tasks: config-runner-windows.yml
   loop: "{{ runner_configs }}"
   loop_control:
+    label: "{{ gitlab_runner.name }}"
     index_var: runner_config_index
     loop_var: runner_config
 

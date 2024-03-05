@@ -22,6 +22,7 @@
   include_tasks: config-runner-container.yml
   loop: "{{ runner_configs }}"
   loop_control:
+    label: "{{ gitlab_runner.name }}"
     index_var: runner_config_index
     loop_var: runner_config
 
