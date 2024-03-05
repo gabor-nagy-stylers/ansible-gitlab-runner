@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: Erik-jan Riemers
-  namespace: riemers
+  author: Stylers 
+  namespace: stylers
   description: GitLab Runner
   license: MIT
   min_ansible_version: 2.7
