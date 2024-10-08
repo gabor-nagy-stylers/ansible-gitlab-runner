@@ -35,7 +35,7 @@
       --env '{{ env_var }}'
       {% endfor %}
       {% if gitlab_runner.tls_ca_file|default(false) %}
-      --tls-ca-file "{{ gitlab_runner.tls_ca_file }}"
+      --tls-ca-file="{{ gitlab_runner.tls_ca_file }}"
       {% endif %}
       --docker-image '{{ gitlab_runner.docker_image|default("alpine") }}'
       {% if gitlab_runner.docker_helper_image is defined %}
@@ -45,13 +45,13 @@
       --docker-privileged
       {% endif %}
       {% if gitlab_runner.docker_wait_for_services_timeout|default(false) %}
-      --docker-wait-for-services-timeout '{{ gitlab_runner.docker_wait_for_services_timeout|default(30) }}'
+      --docker-wait-for-services-timeout='{{ gitlab_runner.docker_wait_for_services_timeout|default(30) }}'
       {% endif %}
       {% if gitlab_runner.docker_tlsverify|default(false) %}
       --docker-tlsverify='{{ gitlab_runner.docker_tlsverify|default("true") }}'
       {% endif %}
       {% if gitlab_runner.docker_disable_cache|default(false) %}
-      --docker-disable-cache '{{ gitlab_runner.docker_disable_cache|default("false") }}'
+      --docker-disable-cache='{{ gitlab_runner.docker_disable_cache|default("false") }}'
       {% endif %}
       {% if gitlab_runner.docker_dns|default(false) %}
       --docker-dns '{{ gitlab_runner.docker_dns|default("1.1.1.1") }}'
@@ -63,7 +63,7 @@
       --docker-disable-cache
       {% endif %}
       {% if gitlab_runner.docker_oom_kill_disable|default(false) %}
-      --docker-oom-kill-disable '{{ gitlab_runner.docker_oom_kill_disable|default("false") }}'
+      --docker-oom-kill-disable='{{ gitlab_runner.docker_oom_kill_disable|default("false") }}'
       {% endif %}
       {% for policy in gitlab_runner.docker_pull_policy|default([]) %}
       --docker-pull-policy "{{ policy }}"
